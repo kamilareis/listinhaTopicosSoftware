@@ -14,11 +14,11 @@ def tabuleiro():
     for l in range(4):
         for c in range(4):
             if lista[l][c] == 0:
-                print("_ |", end=' ')
+                print("_ |", end = ' ')
             elif lista[l][c] == 1:
-                print("X |", end=' ')
+                print("X |", end = ' ')
             elif lista[l][c] == -1:
-                print("O |", end=' ')
+                print("O |", end = ' ')
 
         print(" ")
 
@@ -37,9 +37,9 @@ def jogo():
         #if válida a jogada, se a posição está vazia preenche a posição escolhida pelo jogador.
         if 1 <= linha <= 4 and 1 <= coluna <= 4 and lista[linha-1][coluna-1] == 0:
             if jogador == "X":
-                lista[linha-1][coluna-1]=1 #preenche para o jogador X.
+                lista[linha-1][coluna-1] = 1 #preenche para o jogador X.
             else:
-                lista[linha-1][coluna-1]=-1 #preenche para o jogador O.
+                lista[linha-1][coluna-1] = -1 #preenche para o jogador O.
         else: #se a posição já estiver preenchida imprime "Tente novamente! e retorna para a jogada".
             print("Tente novamente!")
             continue
@@ -48,7 +48,6 @@ def jogo():
             tabuleiro()
             print(f"O jogador {jogador} ganhou!!")
             
-        jogada +=1
         jogador = "X" if jogador == "O" else "O"
 
     #if após terminar o loop e não houver ganhador imprime "Houve empate!".
