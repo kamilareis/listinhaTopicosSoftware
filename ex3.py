@@ -29,13 +29,13 @@ def le_arquivo(arq):
 def gera_lista_n_letras(lista, n):
     return [x for x in lista if len(x) == n]
 
-#função que iimprime cada letra separada da palvra do arquivo.
+#função que imprime cada letra separada da palvra do arquivo.
 def imprime_palavra_atual(palavra):
     for l in palavra:
         print(l, end=" ")
     print("")
 
-#recebe a leitura, processo das palavras, converte as palavras minusculas e usa a função para remover acentos. 
+#recebe a leitura, processa as palavras, converte as palavras minusculas e usa a função para remover acentos. 
 lista = le_arquivo(arquivo)
 lista = [remove_acentos(palavra.lower()) for palavra in lista]
 
@@ -46,10 +46,10 @@ palavra = list(random.choice(lista_n)) #a partir das palavras com o número de l
 
 
 vidas = 6 #tentivas que o jogador tem.
-acertos = [] #lista vazia que vai armazernar as letras adivinhadas.
+acertos = [] #lista vazia que vai armazenar as letras adivinhadas.
 fim_do_jogo = False #define o final do jogo.
 
-#lista de letras dispoiveis para palpites.
+#lista de letras disponiveis para palpites.
 alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 def jogo():
@@ -79,13 +79,13 @@ def jogo():
         if palpite in palavra: #quando acerta a letra adiciona na lista acertos.
             print(f"Acertou a letra {palpite}") 
             acertos.append(palpite)
-        else: #se não indica que erros e adiciona jogada no contador.
+        else: #se não indica que errou e adiciona 1 jogada no contador.
             print("Errou!")
             erros += 1
 
-        alfabeto.remove(palpite) #remove a letra da lista de letras ainda disponiveis.
+        alfabeto.remove(palpite) #remove a letra de palpite da lista de letras ainda disponiveis.
 
-        if all(letra in acertos for letra in palavra): #verifica se todas as todos os palpites estão corretos e interrompe o loop, finalizando o jogo. 
+        if all(letra in acertos for letra in palavra): #verifica se todas as letras dos palpites estão corretos e interrompe o loop, finalizando o jogo. 
             break  
 
     print("Jogo finalizado!")
